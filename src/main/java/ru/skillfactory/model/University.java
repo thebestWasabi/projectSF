@@ -1,14 +1,13 @@
 package ru.skillfactory.model;
 
-import lombok.*;
-import lombok.experimental.FieldDefaults;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-@Getter
-@Setter
-@ToString
-@FieldDefaults(level = AccessLevel.PRIVATE)
+@Data
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class University {
 
+    @EqualsAndHashCode.Include
     private String id;
     private String fullName;
     private String shortName;

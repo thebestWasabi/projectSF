@@ -1,21 +1,17 @@
 package ru.skillfactory.model;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-import lombok.experimental.FieldDefaults;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-@Getter
-@Setter
-@ToString
-@FieldDefaults(level = AccessLevel.PRIVATE)
+@Data
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Student {
 
-    String fullName;
-    String universityId;
-    int currentCourseNumber;
-    float avgExamScore;
+    @EqualsAndHashCode.Include
+    private String fullName;
+    private String universityId;
+    private int currentCourseNumber;
+    private float avgExamScore;
 
     public Student() {
     }

@@ -1,22 +1,26 @@
 package ru.skillfactory;
 
 import ru.skillfactory.model.Student;
-import ru.skillfactory.model.StudyProfile;
 import ru.skillfactory.model.University;
+import ru.skillfactory.reader.XLSXReader;
+
+import java.util.List;
 
 public class Main {
 
+    public static final String PATH = "src/main/resources/universityInfo.xlsx";
+
     public static void main(String[] args) {
-        Student student1 = new Student("Ветрова Карина Германовна",
-                "101", 3, 4.1f);
+        List<Student> students = XLSXReader.readStudents(PATH);
+        for (Student student : students) {
+            System.out.println(student);
+        }
 
-        University university1 = new University(
-                "101",
-                "Университет Компьютерных наук и актерского мастерства",
-                "УКНАК", 1991, StudyProfile.COMPUTER_SCIENCE);
+        System.out.println("-----");
 
-        System.out.println(student1);
-        System.out.println(university1);
-
+        List<University> universities = XLSXReader.readUniversities(PATH);
+        for (University university : universities) {
+            System.out.println(university);
+        }
     }
 }
