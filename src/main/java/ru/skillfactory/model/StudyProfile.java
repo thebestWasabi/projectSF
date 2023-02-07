@@ -1,8 +1,10 @@
 package ru.skillfactory.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
+@AllArgsConstructor
 public enum StudyProfile {
 
     COMPUTER_SCIENCE("Информатика"),
@@ -16,7 +18,4 @@ public enum StudyProfile {
 
     private final String profileName;
 
-    StudyProfile(String profileName) {
-        this.profileName = profileName;
-    }
 }
