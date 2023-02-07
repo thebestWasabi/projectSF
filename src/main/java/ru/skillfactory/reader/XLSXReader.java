@@ -26,19 +26,16 @@ public class XLSXReader {
         try (FileInputStream inputStream = new FileInputStream(file);
              XSSFWorkbook workbook = new XSSFWorkbook(inputStream)) {
             XSSFSheet sheetOfStudents = workbook.getSheet("Студенты");
-
             Iterator<Row> rowIterator = sheetOfStudents.iterator();
             rowIterator.next();
 
             while (rowIterator.hasNext()) {
                 Row row = rowIterator.next();
-
                 Student student = new Student();
                 student.setUniversityId(row.getCell(0).getStringCellValue());
                 student.setFullName(row.getCell(1).getStringCellValue());
                 student.setCurrentCourseNumber((int) row.getCell(2).getNumericCellValue());
                 student.setAvgExamScore((float) row.getCell(3).getNumericCellValue());
-
                 students.add(student);
             }
         } catch (IOException e) {
@@ -54,13 +51,11 @@ public class XLSXReader {
         try (FileInputStream inputStream = new FileInputStream(file);
              XSSFWorkbook workbook = new XSSFWorkbook(inputStream)) {
             XSSFSheet sheetOfUniversities = workbook.getSheet("Университеты");
-
             Iterator<Row> rowIterator = sheetOfUniversities.iterator();
             rowIterator.next();
 
-            while (rowIterator.hasNext(  )  )   {
+            while (rowIterator.hasNext()) {
                 Row row = rowIterator.next();
-
                 University university = new University();
                 university.setId(row.getCell(0).getStringCellValue());
                 university.setFullName(row.getCell(1).getStringCellValue());
