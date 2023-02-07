@@ -1,20 +1,22 @@
 package ru.skillfactory.model;
 
+import lombok.Getter;
+
+@Getter
 public enum StudyProfile {
 
     COMPUTER_SCIENCE("Информатика"),
     MATHEMATICS("Математика"),
     RUSSIAN_LANGUAGE("Русский язык"),
     LITERATURE(" Литература"),
-    ENGLISH("Английский язык");
+    ENGLISH("Английский язык"),
+    PHYSICS("Физика"),
+    MEDICINE("Медицина"),
+    LINGUISTICS("Лингвистика");
 
-    private String profileName;
+    private final String profileName;
 
     StudyProfile(String profileName) {
         this.profileName = profileName;
-    }
-
-    public String getProfileName() {
-        return profileName;
     }
 }
